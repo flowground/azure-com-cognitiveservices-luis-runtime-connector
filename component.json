@@ -1,0 +1,72 @@
+{
+    "title": "Language Understanding Intelligent Service (LUIS) Endpoint API for running predictions and extracting user intentions and entities from utterances.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/cognitiveservices-LUIS-Runtime/v2.0 preview/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://azure.local/luis/v2.0/apps",
+                    "{AzureRegion}.api.cognitive.microsoft.com",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "apiKeyHeader": {
+                "label": "Ocp-Apim-Subscription-Key (apiKeyHeader)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Prediction_Resolve2": {
+            "main": "./lib/actions/Prediction_Resolve2.js",
+            "title": "Gets predictions for a given utterance, in the form of intents and entities. The current maximum query size is 500 characters.",
+            "description": "Gets predictions for a given utterance, in the form of intents and entities. The current maximum query size is 500 characters.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Prediction_Resolve2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Prediction_Resolve": {
+            "main": "./lib/actions/Prediction_Resolve.js",
+            "title": "Gets predictions for a given utterance, in the form of intents and entities. The current maximum query size is 500 characters.",
+            "description": "Gets predictions for a given utterance, in the form of intents and entities. The current maximum query size is 500 characters.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Prediction_Resolve.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

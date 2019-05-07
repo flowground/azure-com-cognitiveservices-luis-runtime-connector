@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string"
+        },
+        "timezoneOffset": {
+            "type": "number"
+        },
+        "verbose": {
+            "type": "boolean"
+        },
+        "staging": {
+            "type": "boolean"
+        },
+        "spellCheck": {
+            "type": "boolean"
+        },
+        "log": {
+            "type": "boolean"
+        },
+        "requestBody": {
+            "description": "The utterance to predict.",
+            "example": "\"forward to frank 30 dollars through HSBC\"",
+            "maxLength": 500,
+            "type": "string"
+        },
+        "bing_spell_check_subscription_key": {
+            "type": "string"
+        }
+    }
+}

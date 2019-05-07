@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string"
+        },
+        "q": {
+            "required": true,
+            "type": "string",
+            "maxLength": 500
+        },
+        "timezoneOffset": {
+            "type": "number"
+        },
+        "verbose": {
+            "type": "boolean"
+        },
+        "staging": {
+            "type": "boolean"
+        },
+        "spellCheck": {
+            "type": "boolean"
+        },
+        "log": {
+            "type": "boolean"
+        },
+        "bing_spell_check_subscription_key": {
+            "type": "string"
+        }
+    }
+}
